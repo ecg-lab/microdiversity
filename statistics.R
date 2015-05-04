@@ -146,46 +146,45 @@ plot.cdplot <- function(data, title='', xmax=-1, ymax=-1, log='y', col='black', 
 # examples
 
 # read in ltt
-dat <- read.cluster()
-sim <- read.cluster()
+example.dat <- na.locf(read.cluster('./example/dat.txt'))
+example.sim <- na.locf(read.cluster('./example/sim.txt'))
 
 # get divergences
-.dist <- c(.get.dists(dat), .get.dists(sim))
+example.dist <- c(.get.dists(example.dat), .get.dists(example.sim))
 
 # bin data for use with get.max.distance.vector
-dat.cd <- bin.cdplot.values(dat, .dists)
-sim.cd <- bin.cdplot.values(sim, .dists)
+example.dat.cd <- bin.cdplot.values(example.dat, example.dist)
+example.sim.cd <- bin.cdplot.values(example.sim, example.dist)
 
-# get distances from null starting at 0 to 0.2 divergence, at 0.05 windows
-d <- get.max.distance.vector(dat.cd, sim.cd, seq(0.05, 0.2, 0.05))
+# get distances from null from 0 to 0.05 divergence
+example.d <- get.max.distance.vector(example.dat.cd, example.sim.cd, seq(0.05, 0.1, 0.05))
 # get null distances only
-d.null <- get.max.distance.vector(sim.cd, bins = seq(0.05, 0.2, 0.05))
-
-# for just first range
-# for others replace all [,1] with [,i] where i is the ith range
+example.d.null <- get.max.distance.vector(example.sim.cd, bins = seq(0.05, 0.1, 0.05))
 
 # above simulations
-above <- dat[ d[,1] > quantile(d.null[,1], 0.975) , ]
+example.above <- example.dat[ , example.d[,1] > quantile(example.d.null[,1], 0.975) ]
 
 # below simulations
-below <- dat[ d[,1] < quantile(d.null[,1], 0.025) , ]
+example.below <- example.dat[ , example.d[,1] < quantile(example.d.null[,1], 0.025) ]
 
 # indistinguishable from simulations
-indistinguishable <- dat[ d[,1] <= quantile(d.null[,1], 0.975) & d[,1] >= quantile(d.null[,1], 0.025), ]
+example.indistinguishable <- example.dat[ , example.d[,1] <= quantile(example.d.null[,1], 0.975) & example.d[,1] >= quantile(example.d.null[,1], 0.025) ]
 
 
 # plot some cd plots
+pdf('./example/example.pdf', width=11, height=8.5)
 par(mfrow=c(2,2))
-plot.cdplot(sim, 'Simulations')
+plot.cdplot(example.sim, 'Simulations', xmax = 0.3, ymax = 200)
 
-plot.cdplot(sim, 'Indistinguishable')
+plot.cdplot(example.sim, 'Indistinguishable', xmax = 0.3, ymax = 200)
 par(new=T)
-plot.cdplot(indistinguishable, title = '', axes = F, xlab = "", ylab = "", col = 'purple')
+plot.cdplot(example.indistinguishable, title = '', axes = F, xlab = "", ylab = "", col = 'purple', xmax = 0.3, ymax = 200)
 
-plot.cdplot(sim, 'Below')
+plot.cdplot(example.sim, 'Below', xmax = 0.3, ymax = 200)
 par(new=T)
-plot.cdplot(below, title = '', axes = F, xlab = '', ylab = '', col = 'steelblue1')
+plot.cdplot(example.below, title = '', axes = F, xlab = '', ylab = '', col = 'steelblue1', xmax = 0.3, ymax = 200)
 
-plot.cdplot(sim, 'Above')
+plot.cdplot(example.sim, 'Above', xmax = 0.3, ymax = 200)
 par(new=T)
-plot.cdplot(above, title = '', axes = F, xlab = '', ylab = '', col = 'orange')
+plot.cdplot(example.above, title = '', axes = F, xlab = '', ylab = '', col = 'orange', xmax = 0.3, ymax = 200)
+dev.off()
