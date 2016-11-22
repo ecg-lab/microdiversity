@@ -1,1 +1,3 @@
-# Timothy J. Straub's Master's thesis code
+
+
+# This contains code for examination of microbial diversity patterns (Timothy J. Straub's M .Sc.thesis)
