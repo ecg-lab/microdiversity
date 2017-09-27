@@ -10,7 +10,7 @@ http://www.pnas.org/content/114/27/E5414.abstract
 
 
 ## Pre-requisities
-* Python 2.7, including Biopython and Numpy
+* Python 2.7, including Biopython and Numpy (https://www.python.org/)
 * R (https://www.r-project.org/)
 * MCL (https://micans.org/mcl/)
 * Mothur (https://mothur.org/)
