@@ -15,6 +15,7 @@ http://www.pnas.org/content/114/27/E5414.abstract
 * MCL (https://micans.org/mcl/)
 * Mothur (https://mothur.org/)
 * MUSCLE (http://drive5.com/muscle/)
+* Seq-Gen (http://tree.bio.ed.ac.uk/software/seqgen/)
 
 ## General steps in the analysis pipeline
 1. Run the pipeline on empirical data. See `pipeline/pipeline.sh` for details.  
