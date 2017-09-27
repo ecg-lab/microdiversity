@@ -3,8 +3,11 @@
 This method has now been published in PNAS!
 
 A null model for microbial diversification
+
 Timothy J. Straub and Olga Zhaxybayeva
+
 PNAS July 3,2017 vol. 114 no. 27 E5414-E5423
+
 10.1073/pnas.1619993114
 
 http://www.pnas.org/content/114/27/E5414.abstract
