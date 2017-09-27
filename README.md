@@ -8,6 +8,6 @@ Pre-requisities:
 * Mothur (https://mothur.org/)
 
 General steps
-1. Run the pipeline on empirical data. See pipeline/pipeline.sh for details.
-2. Simulate neutral gene families based on empirical data. See sim/simulations.sh for details.
+1. Run the pipeline on empirical data. See `pipeline/pipeline.sh` for details.
+2. Simulate neutral gene families based on empirical data. See `sim/simulations.sh` for details.
 
