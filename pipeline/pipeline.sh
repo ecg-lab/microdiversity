@@ -11,7 +11,7 @@
 # PROGRAMS REQUIRED: PYTHON, AFREE, MCL, MUSCLE, MOTHUR                       #
 # PYTHON LIBRARIES REQUIRED: BIOPYTHON, NUMPY                                 #
 #                                                                             #
-# EMAIL TIMOTHY.J.STRAUB.GR@DARTMOUTH.EDU WITH ANY QUESTIONS                  #
+# EMAIL OLGAZH@DARTMOUTH.EDU WITH ANY QUESTIONS                    	      #
 #                                                                             #
 ###############################################################################
 

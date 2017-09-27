@@ -297,7 +297,7 @@ def write_trees(trees, file, format='newick', individual=False):
 
     if individual:
         for i, tree in enumerate(trees):
-            Bio.Phylo.write(tree, '%s.%i' % (file, i), format)
+            Bio.Phylo.write(tree, '%i.%s' % (i, file), format)
     else:
         Bio.Phylo.write(trees, file, format)       
 
